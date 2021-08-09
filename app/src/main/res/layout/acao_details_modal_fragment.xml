@@ -10,6 +10,7 @@
     <ImageView
         android:layout_margin="24dp"
         android:id="@+id/symbol_image"
+        android:background="@drawable/rounded_imageview_corner"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="50dp"
