@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_dark"
+    tools:context=".AcaoDetailsModalFragment">
+
+    <ImageView
+        android:layout_margin="24dp"
+        android:id="@+id/symbol_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/symbol_image"
+        app:layout_constraintLeft_toRightOf="@id/symbol_image"
+        android:id="@+id/symbol_txtView"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/symbol_txtView"
+        app:layout_constraintLeft_toRightOf="@id/symbol_image"
+        android:id="@+id/company_name_txtView"
+        android:layout_marginLeft="10dp"
+        android:textSize="12dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:alpha="0.7"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content" />
+    <View
+        android:id="@+id/divider1"
+        android:layout_marginLeft="24dp"
+        android:background="@color/white"
+        android:layout_marginRight="24dp"
+        android:alpha="0.1"
+        app:layout_constraintTop_toBottomOf="@id/symbol_image"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/br_txtView"
+        app:layout_constraintLeft_toRightOf="@id/br_txtView"
+        android:id="@+id/price_txtView"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/br_txtView"
+        android:layout_margin="24dp"
+        android:textColor="@color/white"
+        android:alpha="0.7"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="24dp"
+        android:id="@+id/divider2"
+        android:background="@color/white"
+        android:alpha="0.1"
+        app:layout_constraintTop_toBottomOf="@id/br_txtView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        android:layout_margin="24dp"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hour_button"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:background="@drawable/button_press"
+            android:text="1H"
+            android:textColor="@color/white" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/day_button"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_press"
+            android:text="1D"
+            android:textColor="@color/white" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/week_button"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_press"
+            android:text="1S"
+            android:textColor="@color/white" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/month_button"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_press"
+            android:text="1M"
+            android:textColor="@color/white" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/year_button"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_press"
+            android:text="1A"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line_chart"
+        app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="156dp" />
+    <ProgressBar
+        android:id="@+id/chart_progress"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/line_chart"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="@id/line_chart"
+        android:layout_height="64dp" />
+    <View
+        android:layout_marginTop="24dp"
+        android:id="@+id/divider3"
+        android:background="@color/white"
+        android:alpha="0.1"
+        app:layout_constraintTop_toBottomOf="@id/line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <TextView
+        android:id="@+id/current_price_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:text="Preço Atual:"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toBottomOf="@id/divider3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/current_price_label"
+        app:layout_constraintLeft_toRightOf="@id/current_price_label"
+        android:id="@+id/current_price_txtView"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/target_price_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:text="Preço Alvo:"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toBottomOf="@id/current_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/target_price_label"
+        app:layout_constraintLeft_toRightOf="@id/current_price_label"
+        app:layout_goneMarginLeft="10dp"
+        android:id="@+id/target_price_txtView"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/potential_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:text="Potencial:"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toBottomOf="@id/target_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/potential_label"
+        app:layout_constraintLeft_toRightOf="@id/potential_label"
+        app:layout_goneMarginLeft="10dp"
+        android:id="@+id/potential_txtView"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <View
+        android:id="@+id/divider4"
+        app:layout_constraintLeft_toRightOf="@id/current_price_txtView"
+        app:layout_constraintRight_toLeftOf="@id/recomendation_label"
+        app:layout_constraintTop_toTopOf="@id/current_price_label"
+        app:layout_constraintBottom_toBottomOf="@id/potential_label"
+        android:layout_width="1dp"
+        android:alpha="0.5"
+        android:background="@color/white"
+        android:layout_height="65dp" />
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/target_price_label"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/recomendation_txtView"
+        android:background="@drawable/rounded_corner_green_tag"
+        android:layout_marginRight="10dp"
+        android:textSize="12dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/recomendation_label"
+        app:layout_constraintRight_toLeftOf="@id/recomendation_txtView"
+        android:layout_marginRight="24dp"
+        android:text="Recomendação:"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toTopOf="@id/target_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/current_price_label"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/risk_txtView"
+        android:background="@drawable/rounded_corner_blue_tag"
+        android:layout_marginRight="10dp"
+        android:textSize="12dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/risk_label"
+        app:layout_constraintLeft_toLeftOf="@id/recomendation_label"
+        android:layout_marginRight="24dp"
+        android:text="Risco(0-100):"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toTopOf="@id/current_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/potential_label"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/fav_xp_txtView"
+        android:layout_marginRight="10dp"
+        android:textSize="12dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="49dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/fav_xp_label"
+        app:layout_constraintLeft_toLeftOf="@id/recomendation_label"
+        android:layout_marginRight="24dp"
+        android:text="Favorito XP:"
+        android:textColor="@color/white"
+        android:alpha="0.5"
+        app:layout_constraintTop_toTopOf="@id/potential_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saibamais_button"
+        app:layout_constraintTop_toBottomOf="@id/potential_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:textColor="@android:color/black"
+        android:text="Saiba Mais" />
+    <ImageView
+        android:id="@+id/close_modal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_icon_cancel"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:tint="@color/close_icon_color" />
+</androidx.constraintlayout.widget.ConstraintLayout>

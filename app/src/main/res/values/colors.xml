@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="primary_color">#14171c</color>
+    <color name="secondary_color">#272c34</color>
+    <color name="green_tag_color">#275638</color>
+    <color name="background_dark">#14171c</color>
+    <color name="risk_tag_color">#1f3249</color>
+    <color name="gray_tag_color">#474b52</color>
+    <color name="green_txt_color">#27b743</color>
+    <color name="close_icon_color">#484c5d</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
