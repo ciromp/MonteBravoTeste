@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/drawable/button_backgroun.xml" value="0.2890625" />
+        <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/drawable/button_press.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/layout/acao_details_modal_fragment.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/layout/fragment_first.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/layout/fragment_second.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/ciro_/AndroidStudioProjects/MonteBravoTest/app/src/main/res/layout/section_acoes_item.xml" value="0.14270833333333333" />
       </map>
     </option>
   </component>
